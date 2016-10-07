@@ -1,0 +1,360 @@
+﻿/*CSS du Ptut Kabyle*/
+body{
+	background-color : #EAF284;
+}
+header{
+	display : inline-block;
+	background: #66a3ff;
+	color : #d00;
+	text-shadow: 5px 5px 5px #600;
+	font-size : 50px;
+	font-family : fantasy;
+	font-variant : small-caps;
+    z-index: 1000;
+    position: relative;
+    padding: 50px;
+	margin-bottom : 0px;
+	margin-left : 5%;
+	margin-right : 5%;
+	border : 2px solid grey;
+	text-align : center;
+	width : 80%;
+	border-radius : 20px;
+}
+
+nav{
+	margin-top : 0px;
+	margin-left : 5%;
+	margin-right : 5%;
+	width : 85%;
+}
+
+nav ul{
+	margin : 0px;
+	text-align : center;
+}
+
+nav li{
+	display : inline-block;
+	background-color : #92E651;
+	width : 15%;
+	padding : 5px;
+	border : 1px solid green;
+	border-bottom-left-radius : 50%;
+	border-bottom-right-radius : 50%;
+	text-align : center;
+}
+#menu ul li a, #menu li:hover li a 
+{
+	color : green;
+  font-size:1em;
+}
+#menu li:hover 
+{
+	background: #45CB53;
+}
+#menu li li:hover 
+{
+	background: #45CB53;
+}
+
+#menu li:hover li
+{
+  max-height: 15em;
+}
+
+.corps{
+	margin : 10px;
+}
+
+footer{
+	position : relative;
+	bottom : 0px;
+	text-align : center;
+}
+
+#my_carousel
+{
+	margin-bottom : 5%;
+	margin-top : 5%;
+	margin-right : 1px;
+	margin-left : 5%;
+	padding :5px;
+	width:60%;
+	height:510px;
+	background-color:#FBF394;
+	color:black;
+	display : inline-block;
+	position : float;
+	float : left;
+}
+
+#my_carousel img{
+	width : auto;
+}
+
+.rightC {
+	width : 20%;
+	margin-top : 5%;
+	margin-right : 8%;
+	position : float;
+	float : right;
+/* 	position : absolute;
+	right : 10%;
+	top : 45%; */
+	display : inline;
+}
+
+.event{
+	padding : 2%;
+	width : auto;
+	display : inline-block;
+	border : solid 1px grey;
+	border-radius : 25px
+}
+
+.event time{
+	font : bold 14pt 'courier new';
+}
+
+.rightC img{
+	text-align : right;
+	padding : 2%;
+	width : auto;
+	display : block;
+}
+
+.formulaire {
+	width : 80%;
+	padding : 2%;
+	margin : 5%;
+	background-color :  #67ED78;
+	border-radius : 25px;
+	display : inline-block;
+}
+
+.tableForm {
+	
+}
+
+/*Médias récent accueil*/
+#recent {
+	height : auto;
+	display : block;
+	text-align: center;
+}
+
+#recent span{
+	height : 53%;
+	width : 30%;
+	text-align : center;
+	/* background-color : #efefef; */
+	display : inline-block;
+	padding : 2px;
+	margin : 2px;
+	border : 2px solid grey;
+	border-radius:10px;
+}
+
+#recent .accueilPhoto {
+	position : float;
+	float : left;
+}
+
+#recent .accueilPhoto img{
+	width : 100%;
+}
+
+#recent .accueilVideo {
+	position :relative;
+	float : right;
+}
+
+#recent .accueilVideo  iframe{
+	width : 100%;
+}
+
+
+/*STYLE DES ARTICLES */
+article{
+	font-family:monospace;
+	padding-right : 10%;
+	padding-left : 10%;
+}
+
+article H2{
+	text-align:center;
+}
+
+article content{
+	font-size : 16px;
+	margin : 5px;
+	text-align : justify;
+}
+
+article header{
+	font-weight:bold;
+	display : inline-block;
+	background: #EAF284;
+	color : #E9284;
+	text-shadow: 5px 5px 5px #fff;
+	font-size : 20px;
+	font-family : fantasy;
+	font-variant : small-caps;
+    z-index: 1000;
+    position: relative;
+    padding: 10px;
+	margin-bottom : 0px;
+	margin-left : 5%;
+	margin-right : 5%;
+	border : 2px solid grey;
+	text-align : center;
+	width : 80%;
+	border-radius : 10px;
+}
+
+article footer{
+	text-align:left;
+}
+
+.imgArticle{
+	text-align:center;
+}
+
+article img{
+	border-radius:5px;
+}
+/*Fin Article*/
+
+/*MEDIA*/
+.blocArticle{
+	height:100px;
+	background-color:#afa;
+	margin: 5px;
+	padding : 10px;
+}
+
+.blocPhoto{
+	height:200px;
+	background-color:#aaf;
+	margin: 5px;
+	padding : 10px;
+	display : inline-block;
+}
+
+.blocPhoto img{
+	height:200px;
+	float:left;
+	left:0;
+	top:-1px;
+}
+
+.blocPhoto P{
+	display:inline;
+	position:relative;
+	top:40%;
+}
+
+.blocVideo{
+	height:220px;
+	width : 300px;
+	background-color:#f88;
+	margin: 5px;
+	padding : 10px;
+	display : inline-block;
+	text-align : center;
+}
+
+.blocVideo iframe{
+	height:auto;
+	top:-1px;
+}
+
+.blocVideo a {
+	float:center;
+	/* position:relative;
+	top:40%; */
+}
+
+.blocVideo P{
+	display:inline;
+	/* position:relative;
+	top:40%; */
+}
+
+/*Test carousel*/
+
+ #slideshow {
+
+	background-image:url(../images/KabyleFlag.jpg);
+	background-repeat:repeat;
+	background-position:center;
+	background-size : 50%;
+	width: auto;
+	height : 40%;
+	display: block;
+	margin:  0px;
+	padding: 0px;
+	overflow: hidden;
+	position: relative;
+	border: 1px solid gray;
+	margin-bottom: 20px;
+
+ }
+
+ .vueS{
+
+  width: auto;
+
+  height: 30%;
+
+  display:block;
+
+  background-position:center center;
+
+ }
+
+ #sContent li {
+
+  display: inline;
+
+  left:0px;;
+
+ }
+
+ #sContent {
+
+  position: absolute;
+
+  width: 800px;
+
+  top: 0;
+
+  left: 0;
+
+  margin: 0;
+
+  padding: 0;
+
+ }
+
+
+
+ @-webkit-keyframes AutoSlide { 0%, 15%, 100% {top: 0px;} 16%, 31% {top: -282px;} 33%, 48% {top: -564px;} 50%, 65% {top: -846px;} 66%, 81% {top: -1128px;} 83%, 98% {top: -1410px;}  }
+
+ @-moz-keyframes AutoSlide { 0%, 15%, 100% {top: 0px;} 16%, 31% {top: -282px;} 33%, 48% {top: -564px;} 50%, 65% {top: -846px;} 66%, 81% {top: -1128px;} 83%, 98% {top: -1410px;}  }
+
+ @keyframes AutoSlide { 0%, 15%, 100% {top: 0px;} 16%, 31% {top: -282px;} 33%, 48% {top: -564px;} 50%, 65% {top: -846px;} 66%, 81% {top: -1128px;} 83%, 98% {top: -1410px;}  }
+
+ #sContent {
+
+  -webkit-animation-name: AutoSlide; -webkit-animation-duration: 30s; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: ease-in-out;
+
+  -moz-animation-name: AutoSlide; -moz-animation-duration: 30s; -moz-animation-iteration-count: infinite; -moz-animation-timing-function: ease-in-out;
+
+  animation-name: AutoSlide; animation-duration: 30s; animation-iteration-count: infinite; animation-timing-function: ease-in-out;
+
+ }
+
+/*Fin Test Caroussel*/
+

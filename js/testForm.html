@@ -1,0 +1,96 @@
+<script type="text/javascript" src="formInscription.js"></script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+  </head>
+  
+  <body>
+  
+
+	<form method="POST" action="index.php?page=creation">
+		<table class="creation">
+		<tr>
+			<td><label>Nom :</label></td>
+			<td><input type="text" id="nom" placeholder="Nom"/></td>
+		</tr>
+		<tr>
+			<td><label>Prénom :</label></td>
+			<td><input type="text" id="prenom" placeholder="Prenom"/></td>
+		</tr>
+		<tr>	
+			<td><label>Âge :</label></td>
+			<td><input type="text"  id="age" size="2" placeholder="Age" onchange="verif_age(this)"/></td>
+		</tr>
+		<tr><td><label>Adresse mail : </label></td>
+			<td><input name="email" placeholder=""></td>
+		</tr>
+		<tr>
+			<td><label>Identifiant :</label></td>
+			<td><input type="text" id="login" placeholder="Identifiant" onchange="verif_id(this)"/></td>
+		</tr>
+		<tr>
+			<td><label>Mot de passe :</label></td>
+			<td><input type="password" id="pass" placeholder="Mot de passe" onchange="verif_force_mdp(this)"/></td>
+		</tr>
+		<tr>
+			<td><label>Confirmer le mot de passe :</label></td>
+			<td><input type="password" id="pass2" placeholder="Confirmation du mot de passe" onchange="verif_mdp2(this)"/></td>
+		</tr>
+		<tr>
+			<td colspan=2><label><input id="chk" type="checkbox" onclick="verif_cgu(this)"/>J'accepte les conditions d'utilisation</label></td>
+		</tr>
+		<tr>
+			<td colspan=2><input id="ok" type="submit" value="VALIDER"/></td>
+		</tr>
+		</table>
+	</form>
+	<!--
+	<form action="" >
+		<table>
+		<tr>
+			<td><label>Nom :</label></td>
+			<td><input type="text" id="nom" placeholder="Nom"/></td>
+		</tr>
+		<tr>
+			<td><label>Prénom :</label></td>
+			<td><input type="text" id="prenom" placeholder="Prenom"/></td>
+		</tr>
+		<tr>	
+			<td><label>Âge :</label></td>
+			<td><input type="text"  id="age" size="2" placeholder="Age" onchange="verif_age(this)"/></td>
+		</tr>
+		<tr>
+			<td><label>Identifiant :</label></td>
+			<td><input type="text" id="login" placeholder="Identifiant" onchange="verif_id(this)"/></td>
+		</tr>
+		<tr>
+			<td><label>Mot de passe :</label></td>
+			<td><input type="password" id="pass" placeholder="Mot de passe" onchange="verif_force_mdp(this)"/></td>
+		</tr>
+		
+		<tr>
+			<td colspan=2 id="mdp_msg"><P></P></td>
+		</tr>
+		<tr>
+			<td colspan=2 id="force_msg"><P></P></td>
+		</tr>
+		
+		<tr>
+			<td><label>Confirmer le mot de passe :</label></td>
+			<td><input type="password" id="pass2" placeholder="Confirmation du mot de passe" onchange="verif_mdp2(this)"/></td>
+		</tr>
+		<tr>
+			<td colspan=2><label><input id="chk" type="checkbox" onclick="verif_cgu(this)"/>J'accepte les CGU de TPjs.com</label></td>
+		</tr>
+		<tr>
+			<td colspan=2><input id="ok" type="submit" value="VALIDER"/></td>
+		</tr>
+		<table>
+	</form>
+	-->
+	
+  </body>
+</html>
+
