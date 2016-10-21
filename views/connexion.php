@@ -1,4 +1,4 @@
-﻿<!--Page Création de compte -->
+﻿<!--Page Connexion -->
 <?php
 	$title = "Kabyle";
 	$titlePage = "Kabyle - Connexion";

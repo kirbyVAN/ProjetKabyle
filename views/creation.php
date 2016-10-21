@@ -1,6 +1,6 @@
 ﻿<!--Page Création de compte -->
 <?php
-	$title = "Le site des photos !";
+	$title = "Kabyle";
 	$titlePage = "creation";
 	ob_start();
 	

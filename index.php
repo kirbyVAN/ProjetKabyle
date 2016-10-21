@@ -11,7 +11,7 @@ $messageCo = "";
 $profil = NULL;
 
 	if(isset($_SESSION['Login'])){
-		$profil='<li><a href="index.php?page=profil">Espace personnel</a></li>';
+		$profil='<li><a href="index.php?page=espacePerso">Espace personnel</a></li>';
 		$etatCo="Déconnexion";
 		
 	} else {
@@ -122,6 +122,32 @@ $profil = NULL;
 			include('views/connexion.php');
 			
 		} 
+		
+		/*Espace personnel*/
+		elseif($_GET['page'] == 'espacePerso') {
+			include ('views/espacePerso.php');
+		}
+		
+		/*Ajouter une vidéo*/
+		elseif($_GET['page'] == 'addVideo') {
+			include ('views/addVideo.php');
+		}
+		
+		/*Ajouter une photo*/
+		elseif($_GET['page'] == 'addPhoto') {
+			include ('views/addPhoto.php');
+		}
+		
+		/*Ajouter un article*/
+		elseif($_GET['page'] == 'addArticle') {
+			include ('views/addArticle.php');
+		}
+		
+		/*Ajouter un evenement*/
+		elseif($_GET['page'] == 'addEvent') {
+			include ('views/addEvent.php');
+		}
+		
 		else {
 			include('views/error.php');
 		}

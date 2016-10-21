@@ -21,7 +21,7 @@ header{
 	width : 80%;
 	border-radius : 20px;
 }
-
+/*Menu*/
 nav{
 	margin-top : 0px;
 	margin-left : 5%;
@@ -62,6 +62,52 @@ nav li{
 {
   max-height: 15em;
 }
+/*Fin Menu*/
+
+/*Menu Ajout*/
+.menuPerso{
+	margin-top : 5%;
+	margin-left : 5%;
+	margin-right : 5%;
+	margin-bottom : 5%;
+	width : 85%;
+	text-align : center;
+	
+}
+.menuPerso ul{
+	margin : 0px;
+	text-align : center;
+}
+
+.menuPerso li{
+	display : inline-block;
+	background-color : #afa;
+	width : 15%;
+	margin : 10px;
+	padding : 10px;
+	border : 1px solid #66a3ff;
+	border-radius : 50%;
+	text-align : center;
+}
+.menuPerso ul li a, .menuPerso li:hover li a 
+{
+	color : blue;
+	font-size:1em;
+}
+.menuPerso li:hover 
+{
+	background: #66a3ff;
+}
+.menuPerso li li:hover 
+{
+	background: #66a3ff;
+}
+
+.menuPerso li:hover li
+{
+  max-height: 15em;
+}
+/*Fin menu ajout*/
 
 .corps{
 	margin : 10px;
@@ -280,6 +326,11 @@ article img{
 	display:inline;
 	/* position:relative;
 	top:40%; */
+}
+
+#addArticle {
+	height : 500px;
+	width : 500px;
 }
 
 /*Test carousel*/

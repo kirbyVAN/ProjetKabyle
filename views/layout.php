@@ -19,12 +19,12 @@
 	<nav  id="menu" class="_" role="navigation">
 		<ul class="menu">
 			<li class="first"><a href="index.php" title="" class="active">Accueil</a></li>
-			<li class="first"><a href="index.php?page=who" title="" class="active">Qui sommes-nous ?</a></li>
 			<li><a href="index.php?page=media" title="La liste des ressources">Médias</a></li>
 			<!--<li><a href="/assets/media" title="">Media</a></li>-->
 			<li><a href="index.php?page=agenda" title="La liste des événements">Agenda</a></li>
 			<?php echo $profil; ?>
-			<li class="last"><a href="index.php?page=connexion" title="_"><?php echo $etatCo; ?></a></li>
+			<li class="last"><a href="index.php?page=connexion" title="Connexion - Déconnexion"><?php echo $etatCo; ?></a></li>
+			<li class="first"><a href="index.php?page=who" title="" class="active">A propos</a></li>
 		</ul>
 	</nav>
 	
