@@ -1,10 +1,10 @@
 Liste des évènements
 
-AddEvent --> View
+AddEvent --> View OK
 AddAdmin --> View
 Ajouts --> controler
 
-+ bool admin user
++ bool admin user OK
 
 + alert si non admin lorsqu'il clique
 + js affiche la vidéo lors de l'ajout

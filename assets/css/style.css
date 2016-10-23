@@ -109,6 +109,78 @@ nav li{
 }
 /*Fin menu ajout*/
 
+/*formulaire d'ajout*/
+textarea {
+	height : 200px;
+	width : 500px; 
+}
+
+
+#addArticle {
+	height : 500px;
+	width : 500px;
+}
+/*Fin formulaire d'ajout*/
+
+/*Agenda*/
+.blocEvent {
+	height:100px;
+	background-color:#86d3ff;
+	margin: 5px;
+	padding : 10px;
+}
+
+.detailEvent {
+	font-family:monospace;
+	padding-right : 10%;
+	padding-left : 10%;
+}
+
+.detailEvent H2{
+	text-align:center;
+}
+
+.detailEvent content{
+	font-size : 18px;
+	margin : 5px;
+	text-align : justify;
+	font-family : Times New Roman;
+}
+
+.detailEvent header{
+	font-weight:bold;
+	display : inline-block;
+	background: #EAF284;
+	color : blue;
+	text-shadow: 5px 5px 5px #fff;
+	font-size : 20px;
+	font-family : fantasy;
+	font-variant : small-caps;
+    z-index: 1000;
+    position: relative;
+    padding: 10px;
+	margin-bottom : 0px;
+	margin-left : 5%;
+	margin-right : 5%;
+	border : 2px solid grey;
+	text-align : center;
+	width : 80%;
+	border-radius : 10px;
+}
+
+.detailEvent footer{
+	text-align:left;
+}
+
+.imgArticle{
+	text-align:center;
+}
+
+.detailEvent mg{
+	border-radius:5px;
+}
+/*Fin Event*/
+
 .corps{
 	margin : 10px;
 }
@@ -326,11 +398,6 @@ article img{
 	display:inline;
 	/* position:relative;
 	top:40%; */
-}
-
-#addArticle {
-	height : 500px;
-	width : 500px;
 }
 
 /*Test carousel*/

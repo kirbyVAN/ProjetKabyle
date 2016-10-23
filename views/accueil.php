@@ -51,14 +51,16 @@
 			calendrier();
 		</script>
 		<br/>
-		<div class="event">
-			<h2>Evènements</h2>
-			<hr/><hr/>
-				<time datetime="2016-05-01T00:7:00+02:00">Dimanche 1 Mai à 7h00</time>
-				<p>Fête du travail</p>
-			<hr/>
-				<time datetime="2016-05-08T00:7:00+02:00">Dimanche 8 Mai à 7h00</time>
-				<p>Armistice 39 - 45</p>
+		<div class="event">';
+			if(isset($event)){
+					echo'
+					<P><b>'.$event['nomEvent'].'</b> du '.$event['MIN(dateDebut)'].' au '.$event['dateFin'].'</P>';
+					$contenu = nl2br(stripslashes($event['descriptionEvent']));
+					$obj = new EventManager();
+					$texte = $obj->tronquer($contenu,200,$event['idEvent']);
+					echo $texte;
+				}
+			echo'
 		</div>
 		
 	</aside>

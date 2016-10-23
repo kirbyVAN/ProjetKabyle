@@ -6,6 +6,7 @@ require_once('model/UtilisateurManager.php');
 require_once('model/ArticleManager.php');
 require_once('model/PhotoManager.php');
 require_once('model/VideoManager.php');
+require_once('model/EventManager.php');
 
 $messageCo = "";
 $profil = NULL;
@@ -68,7 +69,16 @@ $profil = NULL;
 		
 		/*Liste d'évènements*/
 		elseif($_GET['page'] == 'agenda'){
+			$obj = new EventManager();
+			$event = $obj->getEvent();
 			include('views/agenda.php');
+		}
+		
+		/*Détails de l'evenement*/
+		elseif($_GET['page'] == 'detailEvent'){
+			$obj = new EventManager();
+			$event = $obj->getDetailEvent($_GET['idEvent']);
+			include('views/detailEvent.php');
 		}
 		
 		/*Création d'un utilisateur*/
@@ -159,6 +169,8 @@ $profil = NULL;
 		$article = $obj2->articleRecent();
 		$obj3 = new videoManager();
 		$video = $obj3->videoRecent();
+		$obj4 = new EventManager();
+		$event = $obj4->eventProc();
 		include('views/accueil.php');
 	}
 ?>
