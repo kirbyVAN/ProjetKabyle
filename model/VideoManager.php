@@ -15,9 +15,18 @@ class VideoManager extends Model{
 		}
 	
 	public function videoRecent(){
-		$reponse = $this ->executerRequete('SELECT idVideo, titre, url, MAX(dateVideo), descriptionVideo FROM Videos');
+		$reponse = $this ->executerRequete('SELECT * FROM Videos order by dateVideo desc');
 		$video=$reponse->fetch();
 		return $video;
+	}
+	
+	public function addVideo($titre, $url, $dateVideo, $descriptionVideo){
+		$test_url = $this->executerRequete('select * from Videos where url=?', $url);
+		if($test_url->rowCount() != 0){
+			return 1;
+		}
+		$insertion = $this->executerRequete('insert into Videos(titre, url, dateVideo, descriptionVideo) values (?,?,?,?)',array($titre, $url, $dateVideo, $descriptionVideo));
+			return 0;
 	}
 }	
 ?>

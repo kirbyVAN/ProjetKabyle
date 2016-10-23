@@ -36,9 +36,14 @@ class EventManager extends Model{
 	} 
 	
 	public function eventProc(){
-		$reponse = $this ->executerRequete('SELECT idEvent, nomEvent, MIN(dateDebut), dateFin, descriptionEvent FROM Evenements WHERE dateDebut>=NOW()');
+		$reponse = $this ->executerRequete('SELECT * FROM Evenements WHERE dateDebut>=NOW() ORDER BY dateDebut');
 		$event=$reponse->fetch();
 		return $event;
+	}
+	
+	public function addEvent($nomEvent, $dateDebut, $dateFin, $descEvent){
+		$insertion = $this->executerRequete('insert into Evenements(nomEvent, dateDebut, dateFin, descriptionEvent) values (?,?,?,?)',array($nomEvent, $dateDebut, $dateFin, $descEvent));
+			return 0;
 	}
 }
 ?>

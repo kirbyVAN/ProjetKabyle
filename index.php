@@ -140,7 +140,23 @@ $profil = NULL;
 		
 		/*Ajouter une vidéo*/
 		elseif($_GET['page'] == 'addVideo') {
-			include ('views/addVideo.php');
+			if(isset($_POST['titreVideo']) AND isset($_POST['url']) AND isset($_POST['dateVideo']) AND isset($_POST['descVideo'])){
+						
+				$obj = new VideoManager();
+				$data = $obj->addVideo($_POST['titreVideo'],$_POST['url'], $_POST['dateVideo'], $_POST['descVideo']);
+				
+				if ($data == 0){
+					$res=0;
+				} elseif ($data == 1){
+					$res=1;
+				}
+				include('views/addVideo.php');
+				
+			}  else {
+				
+				$res=-1;
+				include('views/addVideo.php');				
+			}
 		}
 		
 		/*Ajouter une photo*/
@@ -150,12 +166,44 @@ $profil = NULL;
 		
 		/*Ajouter un article*/
 		elseif($_GET['page'] == 'addArticle') {
-			include ('views/addArticle.php');
+			if(isset($_POST['titreArticle']) AND isset($_POST['auteurArticle']) AND isset($_POST['addArticle']) AND isset($_POST['dateArticle'])){
+						
+				$obj = new ArticleManager();
+				$data = $obj->addArticle($_POST['titreArticle'],$_POST['auteurArticle'], $_POST['addArticle'], $_POST['dateArticle']);
+				
+				if ($data == 0){
+					$res=0;
+				} elseif ($data == 1){
+					$res=1;
+				}
+				include('views/addArticle.php');
+				
+			}  else {
+				
+				$res=-1;
+				include('views/addArticle.php');				
+			}
 		}
 		
 		/*Ajouter un evenement*/
 		elseif($_GET['page'] == 'addEvent') {
-			include ('views/addEvent.php');
+			if(isset($_POST['nomEvent']) AND isset($_POST['dateDebut']) AND isset($_POST['dateFin']) AND isset($_POST['descEvent'])){
+						
+				$obj = new EventManager();
+				$data = $obj->addEvent($_POST['nomEvent'],$_POST['dateDebut'], $_POST['dateFin'], $_POST['descEvent']);
+				
+				if ($data == 0){
+					$res=0;
+				} elseif ($data == 1){
+					$res=1;
+				}
+				include('views/addEvent.php');
+				
+			}  else {
+				
+				$res=-1;
+				include('views/addEvent.php');				
+			}
 		}
 		
 		else {

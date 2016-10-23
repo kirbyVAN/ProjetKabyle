@@ -24,7 +24,7 @@
 			<span class="accueilArticle">';
 				if(isset($article)){
 					echo'
-					<P><b>'.$article['titre'].'</b> de '.$article['auteur'].' le '.$article['MAX(dateArticle)'].'</P>';
+					<P><b>'.$article['titre'].'</b> de '.$article['auteur'].' le '.$article['dateArticle'].'</P>';
 					$contenu = nl2br(stripslashes($article['contenu']));
 					$obj = new ArticleManager();
 					$texte = $obj->tronquer($contenu,200,$article['idArticle']);
@@ -54,7 +54,7 @@
 		<div class="event">';
 			if(isset($event)){
 					echo'
-					<P><b>'.$event['nomEvent'].'</b> du '.$event['MIN(dateDebut)'].' au '.$event['dateFin'].'</P>';
+					<P><b>'.$event['nomEvent'].'</b><br/> du '.$event['dateDebut'].'<br/> au '.$event['dateFin'].'</P>';
 					$contenu = nl2br(stripslashes($event['descriptionEvent']));
 					$obj = new EventManager();
 					$texte = $obj->tronquer($contenu,200,$event['idEvent']);

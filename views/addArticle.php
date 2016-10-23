@@ -23,7 +23,7 @@
 				<td colspan="2"><label>Article : </label></td>
 			</tr>
 			<tr>
-				<td colspan="2"><textarea type="text" id="addArticle" name="article" placeholder="Saisir l\'article ..."></textarea></td>
+				<td colspan="2"><textarea type="text" id="addArticle" name="addArticle" placeholder="Saisir l\'article ..."></textarea></td>
 			</tr>
 			<tr>
 				<td colspan=2><input id="ajout" type="submit" value="AJOUTER"/></td>

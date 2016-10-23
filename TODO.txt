@@ -2,7 +2,7 @@ Liste des évènements
 
 AddEvent --> View OK
 AddAdmin --> View
-Ajouts --> controler
+Ajouts --> controler Ok reste photo
 
 + bool admin user OK
 
@@ -12,3 +12,5 @@ Ajouts --> controler
 Essayer flex
 
 Régler le problème de carousel
+
+https://iutdoua-web.univ-lyon1.fr/~p1405185/Kabyle/index.php

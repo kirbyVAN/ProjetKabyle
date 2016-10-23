@@ -36,9 +36,14 @@ class ArticleManager extends Model{
 	} 
 	
 	public function articleRecent(){
-		$reponse = $this ->executerRequete('SELECT idArticle, titre, auteur, contenu, MAX(dateArticle), heureArticle, photo FROM Articles');
+		$reponse = $this ->executerRequete('SELECT * FROM Articles ORDER BY dateArticle desc');
 		$article=$reponse->fetch();
 		return $article;
+	}
+	
+	public function addArticle($titreArticle, $auteurArticle, $addArticle, $dateArticle){
+		$insertion = $this->executerRequete('insert into Articles(titre, auteur, contenu, dateArticle) values (?,?,?,?)',array($titreArticle, $auteurArticle, $addArticle, $dateArticle));
+			return 0;
 	}
 }
 ?>

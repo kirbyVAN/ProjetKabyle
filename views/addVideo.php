@@ -12,7 +12,10 @@
 				<td><input type="text" id="titreVideo" name="titreVideo" placeholder="Titre vidéo"/></td>
 			</tr>
 			<tr>
-				<td><label>URL :</label></td>
+				<td colspan="2"><label>URL :</label> <i>(format de l\'url : https://www.youtube.com/embed/xxxxxxxxx)</i></td>
+			</tr>
+			<tr>
+				<td></td>
 				<td><input type="text" id="url" name="url" placeholder="url"/></td>
 			</tr>
 			<tr>	
