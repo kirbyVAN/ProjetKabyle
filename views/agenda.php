@@ -3,7 +3,7 @@
 	ob_start();
 	
 	echo '
-	<p>Agenda</p>
+	<h1>Agenda</h1>
 	<script type="text/javascript">
         calendrier();
     </script>

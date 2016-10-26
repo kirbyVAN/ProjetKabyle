@@ -12,7 +12,7 @@ $messageCo = "";
 $profil = NULL;
 
 	if(isset($_SESSION['Login'])){
-		$profil='<li><a href="index.php?page=espacePerso">Espace personnel</a></li>';
+		$profil='<li><a href="index.php?page=espacePerso">'.$_SESSION['Login'].'</a></li>';
 		$etatCo="Déconnexion";
 		
 	} else {
@@ -135,7 +135,34 @@ $profil = NULL;
 		
 		/*Espace personnel*/
 		elseif($_GET['page'] == 'espacePerso') {
-			include ('views/espacePerso.php');
+			$statut = new UtilisateurManager();
+			$user = $statut->getDetailUser($_SESSION['Login']);
+			if($user['admin']=='1'){
+				include ('views/espaceAdmin.php');
+			} else {
+				include ('views/espacePerso.php');
+			}
+		}
+		
+		/*Ajouter un administrateur*/
+		elseif($_GET['page'] == 'addAdmin') {
+			$obj1 = new UtilisateurManager();
+			$noAdmin = $obj1->getNoAdmin();
+			
+			if(isset($_POST['chk'])){
+				$obj2 = new UtilisateurManager();
+				$data = $obj2->addAdmin($_POST['chk']) ;
+				if ($data == 0){
+						$res=0;
+						
+					} else{
+						$res=1;
+					}
+			$noAdmin = $obj1->getNoAdmin();
+				include ('views/addAdmin.php');
+			}else{
+				include ('views/addAdmin.php');
+			}
 		}
 		
 		/*Ajouter une vidéo*/

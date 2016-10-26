@@ -21,6 +21,11 @@ header{
 	width : 80%;
 	border-radius : 20px;
 }
+
+h1 {
+	text-align : center;
+}
+
 /*Menu*/
 nav{
 	margin-top : 0px;
@@ -47,7 +52,8 @@ nav li{
 #menu ul li a, #menu li:hover li a 
 {
 	color : green;
-  font-size:1em;
+	font-size:1em;
+	text-decoration : none;
 }
 #menu li:hover 
 {
@@ -91,6 +97,7 @@ nav li{
 }
 .menuPerso ul li a, .menuPerso li:hover li a 
 {
+	text-decoration : none;
 	color : blue;
 	font-size:1em;
 }
@@ -182,14 +189,16 @@ textarea {
 }
 /*Fin Event*/
 
-.corps{
+content{
 	margin : 10px;
 }
 
 footer{
+	display : inline-block;
 	position : relative;
-	bottom : 0px;
+	bottom : 1px;
 	text-align : center;
+	width : 95%;
 }
 
 #my_carousel
@@ -229,11 +238,16 @@ footer{
 	width : auto;
 	display : inline-block;
 	border : solid 1px grey;
-	border-radius : 25px
+	border-radius : 10px;
+	text-align : center;
+}
+
+.event P {
+	font : bold 16pt 'Times New Roman';
 }
 
 .event time{
-	font : bold 14pt 'courier new';
+	font : bold 12pt 'courier new';
 }
 
 .rightC img{
@@ -264,14 +278,14 @@ footer{
 }
 
 #recent span{
-	height : 53%;
+	min-height : 50%;
 	width : 30%;
 	text-align : center;
 	/* background-color : #efefef; */
 	display : inline-block;
 	padding : 2px;
 	margin : 2px;
-	border : 2px solid grey;
+	border: 2px solid grey;
 	border-radius:10px;
 }
 
@@ -281,7 +295,7 @@ footer{
 }
 
 #recent .accueilPhoto img{
-	width : 100%;
+	width : 95%;
 }
 
 #recent .accueilVideo {
@@ -290,7 +304,7 @@ footer{
 }
 
 #recent .accueilVideo  iframe{
-	width : 100%;
+	width : 95%;
 }
 
 

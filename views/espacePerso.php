@@ -5,13 +5,13 @@
 	ob_start();
 	
 	echo'
-	<ul class="menuPerso">
-		<li><a href="index.php?page=addVideo" title="Ajouter une vidéo">Ajouter une vidéo</a></li>
-		<li><a href="index.php?page=addPhoto" title="Ajouter une photo">Ajouter une photo</a></li>
-		<li><a href="index.php?page=addArticle" title="Ajouter un article">Ajouter un article</a></li>
-		<li><a href="index.php?page=addEvent" title="Ajouter un évènement">Ajouter un évènement</a></li>
-	</ul>
+	<h1>Bienvenu dans votre espace personnel !</h1><hr/>
+	<p><b>Nom : </b>'.$user['Nom'].'</p>
+	<p><b>Prenom : </b>'.$user['Prenom'].'</p>
+	<p><b>Age : </b>'.$user['Age'].'</p>
+	<p><b>Preudo/Login : </b>'.$user['Login'].'</p>
 		';
+		
 	$content = ob_get_clean();
 	
 	include('layout.php');

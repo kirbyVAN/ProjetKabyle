@@ -5,6 +5,7 @@
 	ob_start();
 	
 	echo'
+		<h1>Ajouter une photo</h1><hr/>
 		<form method="POST" action="index.php?page=addPhoto">
 			<table class="creation">
 			<tr>

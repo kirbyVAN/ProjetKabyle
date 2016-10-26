@@ -5,6 +5,7 @@
 	ob_start();
 	
 	echo'
+		<h1>Ajouter une vidéo</h1><hr/>
 		<form method="POST" action="index.php?page=addVideo">
 			<table class="creation">
 			<tr>

@@ -3,7 +3,7 @@
 	ob_start();
 	
 	echo '
-	<div>
+	
 	<div id="my_carousel">
 		<div id="slideshow">
 		 <ul id="sContent">
@@ -20,11 +20,11 @@
 				}
 			echo'
 			</span>
-			
+	
 			<span class="accueilArticle">';
 				if(isset($article)){
 					echo'
-					<P><b>'.$article['titre'].'</b> de '.$article['auteur'].' le '.$article['dateArticle'].'</P>';
+					<P><b>'.$article['titre'].'</b><br/>de '.$article['auteur'].'<br/>le '.$article['dateArticle'].'</P>';
 					$contenu = nl2br(stripslashes($article['contenu']));
 					$obj = new ArticleManager();
 					$texte = $obj->tronquer($contenu,200,$article['idArticle']);
@@ -45,7 +45,7 @@
 			
 		</div>
 	</div>
-	</div>
+	
 	<aside class="rightC">
 		<script type="text/javascript">
 			calendrier();
@@ -53,50 +53,22 @@
 		<br/>
 		<div class="event">';
 			if(isset($event)){
+				if($event['idEvent']!=NULL){
 					echo'
-					<P><b>'.$event['nomEvent'].'</b><br/> du '.$event['dateDebut'].'<br/> au '.$event['dateFin'].'</P>';
+					<P><b>'.$event['nomEvent'].'</b><br/> du <time>'.$event['dateDebut'].'</time><br/> au <time>'.$event['dateFin'].'<time></P>';
 					$contenu = nl2br(stripslashes($event['descriptionEvent']));
 					$obj = new EventManager();
 					$texte = $obj->tronquer($contenu,200,$event['idEvent']);
 					echo $texte;
+				}else{
+					echo'<p>Il n\'y a rien de prévu sur l\'agenda pour l\'instant.';
 				}
+			}
 			echo'
 		</div>
 		
 	</aside>
-	<div>
-	<div class="formulaire">
-		<h2>Recherche</h2>
-		<form>
-			<table class="tableForm">
-			<tr>
-				<th>Thème<hr/></th>
-				<th>Média<hr/></th>
-				<td></td>
-			</tr>
-			<tr>
-				<td><select>
-					<option>Histoire</option>
-					<option>Evènements</option>
-					<option>Culture</option>
-					<option>Autre</option>
-					</select>
-				</td>
-				<td>
-					<label><input name="media" type="checkbox" value="im"> Images</label>
-					<label><input name="media" type="checkbox" value="vi"> Videos</label>
-					<label><input name="media" type="checkbox" value="ar"> Articles</label>
-				</td>
-				<td></td>
-			</tr>
-			<tr>
-			<td colspan="3"></td>
-			<td>
-				<button>Valider</button>
-			</td>
-			</table>
-		</form>
-	</div>
+	
 	';
 	
 	

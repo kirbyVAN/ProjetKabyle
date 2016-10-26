@@ -32,6 +32,23 @@
 			}
 		}
 		
+		public function getDetailUser($login){
+			$statut = $this -> executerRequete('SELECT * FROM Utilisateur WHERE Login=:Login',array(':Login'=>$login));
+			$admin=$statut->fetch();
+			return $admin;
+		}
+		
+		public function getNoAdmin() {
+		$reponse = $this ->executerRequete('SELECT Login, Nom, Prenom, Age FROM Utilisateur WHERE admin!=1');
+		$noAdmin=$reponse->fetchAll();
+		return $noAdmin;
+	}
+	
+		public function addAdmin($login){
+			$modification = $this->executerRequete('UPDATE Utilisateur SET admin=1 WHERE Login=:Login',array(':Login'=>$login));
+			return 0;
+		}
+		
 		public function likePlus($login,$photo){
 			$verif = $this ->executerRequete('SELECT * FROM Aimer WHERE Login = ? AND photoId = ?;',
 			array($login, $photo));

@@ -1,0 +1,49 @@
+@media screen and (max-width:800px) {
+	.corps {
+		display : block;
+		width : 95%;
+		margin : 1%;
+		padding : 1%;
+		border : #bcbcbc solid 2pt;
+		border-radius : 20px;
+	}
+	nav {
+		text-align : center;
+		display : flex-block;
+		width : 95%;
+		margin : 1%;
+		padding : 1%;
+		border-radius : 10px;
+	}
+	nav ul{
+		display : flex-block;
+	}
+	nav label {
+		display : none;
+	}
+	
+	nav #menu a
+	{
+		display : flex;
+	}
+	nav #menu li {
+		width : auto;
+		margin : 0%;
+		padding : 1%;
+		display : flex;
+		vertical-align : top;
+	}
+	nav #menu li li {
+		width : auto;
+		display : flex-block;
+		margin : 0;
+		padding : 0;
+		max-height : 0;
+	}
+	
+	footer #menu-icones-sociaux, .footer #menu-icones-partenaires, .footer #iut-link
+	{
+		display : block;
+		width : auto;
+	}
+}

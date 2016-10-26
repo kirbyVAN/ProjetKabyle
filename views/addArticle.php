@@ -5,6 +5,7 @@
 	ob_start();
 	
 	echo'
+		<h1>Ajouer un article</h1><hr/>
 		<form method="POST" action="index.php?page=addArticle">
 			<table class="creation">
 			<tr>

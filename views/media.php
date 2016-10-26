@@ -4,7 +4,9 @@
 	
 	$obj = new ArticleManager();
 
-	echo '<br/><form method="POST" action="index.php?page=media">
+	echo '
+		<h1>Liste des médias</h1>
+		<br/><form method="POST" action="index.php?page=media">
 			<label>Vous pouvez choisir un type de média : </label>
 			<SELECT name="typeMedia" >	
 				<option value="tous"> Tous </option>
