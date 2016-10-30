@@ -7,7 +7,15 @@
 	';
 	echo '<hr/>
 		<form method="POST" action="index.php?page=addAdmin">
-		<table style="width:95%">';
+		<table style="width:95%">
+		<tr style="font-size:14pt; text-align:center; background-color:cyan; height:50px">
+			<th></th>
+			<th>Login</th>
+			<th>Nom</th>
+			<th>Prenom</th>
+			<th>Age</th>
+		</tr>
+		';
 	foreach($noAdmin as $data){						
 		echo '<tr class="blocEvent" style="text-align:center">	
 					<td><input type=radio name="chk" value="'.$data['Login'].'"/></td>
