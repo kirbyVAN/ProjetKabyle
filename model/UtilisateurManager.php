@@ -24,8 +24,9 @@
 			array(':Login' => $login, ':Pass' =>$pass));
 		
 			$count = $connexion->rowCount();
+			$user = $connexion->fetch();
 		
-			if($count != 0){
+			if($user['Login']==$login AND $user['Pass']==$pass AND $count==1){
 				return 1;
 			} else {
 				return 0;

@@ -15,9 +15,19 @@ class PhotoManager extends Model{
 		}
 	
 	public function photoRecent(){
-		$reponse = $this ->executerRequete('SELECT idPhoto, nomPhoto, MAX(datePhoto), descriptionPhoto FROM Photos');
+		$reponse = $this ->executerRequete('SELECT * FROM Photos ORDER BY datePhoto desc');
 		$photo=$reponse->fetch();
 		return $photo;
 	}
+	
+	public function addPhoto($nomPhoto, $datePhoto, $descriptionPhoto){
+		$test_nom = $this->executerRequete('select * from Photos where nomPhoto=?', $nomPhoto);
+		if($test_nom->rowCount() != 0){
+			return 1;
+		}
+		$insertion = $this->executerRequete('insert into Photos(nomPhoto, datePhoto, descriptionPhoto) values (?,?,?)',array($nomPhoto, $datePhoto, $descriptionPhoto));
+			return 0;
+	}
+	
 }	
 ?>

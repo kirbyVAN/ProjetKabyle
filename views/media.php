@@ -36,7 +36,7 @@
 		echo '<hr/>';
 		foreach($photo as $data){						
 			echo '<div class="blocPhoto">	
-						<span><P><a href="index.php?page=photo&amp;photo='.$data['idPhoto'].'"target="_blank" ><img src="assets/images/' .$data['nomPhoto'].'" alt="'.$data['descriptionPhoto'].'"/></a></P></span>
+						<span><P><a href="index.php?page=detailPhoto&amp;idPhoto='.$data['idPhoto'].'"target="_blank" ><img src="assets/images/' .$data['nomPhoto'].'" alt="'.$data['descriptionPhoto'].'"/></a></P></span>
 				</div>' ;
 		}
 	}

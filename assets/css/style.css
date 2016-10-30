@@ -359,6 +359,28 @@ article img{
 }
 /*Fin Article*/
 
+/*Photo detail*/
+table.detailPhoto{
+	margin : auto;
+	text-align : center;
+	border : 1px solid grey;
+}
+
+table.detailPhoto td{
+	text-align : center;
+	border : 1px solid grey;
+}
+
+table.detailPhoto th{
+	text-align : center;
+	border : 1px solid grey;
+}
+
+table.detailPhoto img{
+	max-height : 500px;
+	max-width : 500px;
+}
+
 /*MEDIA*/
 .blocArticle{
 	height:100px;

@@ -1,6 +1,6 @@
 ﻿<?php
 session_start();
-// ini_set('display_errors','off');
+ini_set('display_errors','off');
 require_once('model/Model.php');
 require_once('model/UtilisateurManager.php');
 require_once('model/ArticleManager.php');
@@ -29,15 +29,19 @@ $profil = NULL;
 			
 			
 			if (isset($_POST['typeMedia'])){
+				
 				if($_POST['typeMedia']=='A'){
 					$obj1 = new ArticleManager();
 					$article = $obj1->getArticles();
+					
 				} elseif($_POST['typeMedia']=='I') {
 					$obj2 = new PhotoManager();
 					$photo = $obj2->getPhotos();
+					
 				} elseif($_POST['typeMedia']=='V') {
 					$obj3 = new VideoManager();
 					$video = $obj3->getVideos();
+					
 				} else{
 					$obj1 = new ArticleManager();
 					$article = $obj1->getArticles();
@@ -45,7 +49,8 @@ $profil = NULL;
 					$photo = $obj2->getPhotos();
 					$obj3 = new VideoManager();
 					$video = $obj3->getVideos();
-				}		
+				}	
+	
 			} else {
 				$obj1 = new ArticleManager();
 				$article = $obj1->getArticles();
@@ -65,6 +70,13 @@ $profil = NULL;
 			$obj = new ArticleManager();
 			$article = $obj->getDetailsArticle($_GET['idArticle']);
 			include('views/detailMedia.php');
+		}
+		
+		/*Détails de la photo*/
+		elseif($_GET['page'] == 'detailPhoto'){
+			$obj = new PhotoManager();
+			$photo = $obj->getDetailsPhoto($_GET['idPhoto']);
+			include('views/detailPhoto.php');
 		}
 		
 		/*Liste d'évènements*/
@@ -124,7 +136,6 @@ $profil = NULL;
 					$messageCo = "Vous êtes maintenant connecté en tant que " .$_SESSION['Login'];
 					header('Location: index.php');
 				} else {
-					
 					$messageCo = "Login et/ou mot de passe <b>incorrects</b>. Veuillez vérifier et réessayer !";
 				}
 			}
@@ -188,7 +199,25 @@ $profil = NULL;
 		
 		/*Ajouter une photo*/
 		elseif($_GET['page'] == 'addPhoto') {
-			include ('views/addPhoto.php');
+		
+			if(isset($_FILES['photo']['name']) AND isset($_POST['datePhoto'])){
+				
+				$obj = new PhotoManager();
+				$data = $obj->addPhoto($_FILES['photo']['name'], $_POST['datePhoto'], $_POST['descPhoto']);
+				
+				if ($data == 0){
+					$res=0;
+				} elseif ($data == 1){
+					$res=1;
+				}
+				include('views/addPhoto.php');
+			
+			}  else {
+				
+				$res=-1;
+				include('views/addPhoto.php');				
+			}
+			
 		}
 		
 		/*Ajouter un article*/

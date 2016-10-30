@@ -3,7 +3,7 @@
 class EventManager extends Model{
 	
 	public function getEvent() {
-		$reponse = $this ->executerRequete('SELECT * FROM Evenements WHERE dateDebut>= NOW() order by dateDebut');
+		$reponse = $this ->executerRequete('SELECT * FROM Evenements WHERE dateFin>= NOW() order by dateDebut');
 		$event=$reponse->fetchAll();
 		return $event;
 	}
@@ -36,7 +36,7 @@ class EventManager extends Model{
 	} 
 	
 	public function eventProc(){
-		$reponse = $this ->executerRequete('SELECT * FROM Evenements WHERE dateDebut>=NOW() ORDER BY dateDebut');
+		$reponse = $this ->executerRequete('SELECT * FROM Evenements WHERE dateFin>=NOW() ORDER BY dateDebut');
 		$event=$reponse->fetch();
 		return $event;
 	}

@@ -1,7 +1,7 @@
 ﻿<!--Page Création de compte -->
 <?php
 	$title = "Kabyle";
-	$titlePage = "creation";
+	$titlePage = "Kabyle - Créer un compte";
 	ob_start();
 	
 	echo'
@@ -51,13 +51,13 @@
 	//A revoir
 	if (isset($res)){
 		if($res==1){
-			echo 'ERREUR : Login existant !';
+			echo '<b>ERREUR : Login existant !</b>';
 		}
 		elseif($res==2){
-			echo 'ERREUR : email existant !';
+			echo '<b>ERREUR : email existant !</b>';
 		}
 		elseif($res==0){
-			echo 'Super ! Bienvenue au club !';
+			echo '<b>Super ! Bienvenue au club !</b>';
 		}
 		else{
 			echo '';

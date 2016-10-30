@@ -16,7 +16,9 @@
 			<span class="accueilPhoto">';
 				if(isset($photo)){
 					echo'
-					<a href="index.php?page=photo&amp;photo='.$photo['idPhoto'].'" target="_blank" ><img src="assets/images/' .$photo['nomPhoto'].'" alt="'.$photo['descriptionPhoto'].'"/></a>';
+					<a href="index.php?page=detailPhoto&amp;idPhoto='.$photo['idPhoto'].'" target="_blank" ><img src="assets/images/' .$photo['nomPhoto'].'" alt="'.$photo['descriptionPhoto'].'"/></a>
+					<br/>
+					<p>'.$photo['descriptionPhoto'].'</p>';
 				}
 			echo'
 			</span>
