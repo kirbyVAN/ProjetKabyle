@@ -103,7 +103,7 @@
 	
 	echo'
 		<h1>Ajouter une photo</h1><hr/>
-		<strong>'.htmlspecialchars($message).$extension.'</strong>
+		<strong>'.htmlspecialchars($message).'</strong>
 		<form enctype="multipart/form-data" method="POST" action="index.php?page=addPhoto">
 			<table class="creation">
 			<tr>
