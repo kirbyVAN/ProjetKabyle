@@ -1,6 +1,6 @@
 ﻿<?php
 session_start();
-ini_set('display_errors','off');
+//ini_set('display_errors','off');
 require_once('model/Model.php');
 require_once('model/UtilisateurManager.php');
 require_once('model/ArticleManager.php');
@@ -150,8 +150,32 @@ $profil = NULL;
 			$user = $statut->getDetailUser($_SESSION['Login']);
 			if($user['admin']=='1'){
 				include ('views/espaceAdmin.php');
+			}
+			elseif($user['admin']=='2'){
+				include ('views/espaceMaster.php');
 			} else {
 				include ('views/espacePerso.php');
+			}
+		}
+		
+		/*Ajouter un utilisateur*/
+		elseif($_GET['page'] == 'addUser') {
+			$obj1 = new UtilisateurManager();
+			$tempUser = $obj1->getTempUser();
+			
+			if(isset($_POST['chk'])){
+				$obj2 = new UtilisateurManager();
+				$data = $obj2->addUser($_POST['chk']) ;
+				if ($data == 0){
+						$res=0;
+						
+					} else{
+						$res=1;
+					}
+			$tempUser = $obj1->getTempUser();
+				include ('views/addUser.php');
+			}else{
+				include ('views/addUser.php');
 			}
 		}
 		
@@ -176,6 +200,27 @@ $profil = NULL;
 			}
 		}
 		
+		/*Supprimer un administrateur*/
+		elseif($_GET['page'] == 'supprAdmin') {
+			$obj1 = new UtilisateurManager();
+			$admin = $obj1->getAdmin();
+			
+			if(isset($_POST['chk'])){
+				$obj2 = new UtilisateurManager();
+				$data = $obj2->supprAdmin($_POST['chk']) ;
+				if ($data == 0){
+						$res=0;
+						
+					} else{
+						$res=1;
+					}
+			$admin = $obj1->getAdmin();
+				include ('views/supprAdmin.php');
+			}else{
+				include ('views/supprAdmin.php');
+			}
+		}
+		
 		/*Ajouter une vidéo*/
 		elseif($_GET['page'] == 'addVideo') {
 			if(isset($_POST['titreVideo']) AND isset($_POST['url']) AND isset($_POST['dateVideo']) AND isset($_POST['descVideo'])){
@@ -194,6 +239,27 @@ $profil = NULL;
 				
 				$res=-1;
 				include('views/addVideo.php');				
+			}
+		}
+		
+		/*Supprimer une video*/
+		elseif($_GET['page'] == 'supprVideo') {
+			$obj1 = new VideoManager();
+			$video = $obj1->getVideos();
+			
+			if(isset($_POST['chk'])){
+				$obj2 = new VideoManager();
+				$data = $obj2->supprVideo($_POST['chk']) ;
+				if ($data == 0){
+						$res=0;
+						
+					} else{
+						$res=1;
+					}
+			$video = $obj1->getVideos();
+				include ('views/supprVideo.php');
+			}else{
+				include ('views/supprVideo.php');
 			}
 		}
 		
@@ -220,6 +286,27 @@ $profil = NULL;
 			
 		}
 		
+		/*Supprimer une photo*/
+		elseif($_GET['page'] == 'supprPhoto') {
+			$obj1 = new PhotoManager();
+			$photo = $obj1->getPhotos();
+			
+			if(isset($_POST['chk'])){
+				$obj2 = new PhotoManager();
+				$data = $obj2->supprPhoto($_POST['chk']) ;
+				if ($data == 0){
+						$res=0;
+						
+					} else{
+						$res=1;
+					}
+			$photo = $obj1->getPhotos();
+				include ('views/supprPhoto.php');
+			}else{
+				include ('views/supprPhoto.php');
+			}
+		}
+		
 		/*Ajouter un article*/
 		elseif($_GET['page'] == 'addArticle') {
 			if(isset($_POST['titreArticle']) AND isset($_POST['auteurArticle']) AND isset($_POST['addArticle']) AND isset($_POST['dateArticle'])){
@@ -238,6 +325,27 @@ $profil = NULL;
 				
 				$res=-1;
 				include('views/addArticle.php');				
+			}
+		}
+		
+		/*Supprimer un article*/
+		elseif($_GET['page'] == 'supprArticle') {
+			$obj1 = new ArticleManager();
+			$article = $obj1->getArticles();
+			
+			if(isset($_POST['chk'])){
+				$obj2 = new ArticleManager();
+				$data = $obj2->supprArticle($_POST['chk']) ;
+				if ($data == 0){
+						$res=0;
+						
+					} else{
+						$res=1;
+					}
+			$article = $obj1->getArticles();
+				include ('views/supprArticle.php');
+			}else{
+				include ('views/supprArticle.php');
 			}
 		}
 		
@@ -262,9 +370,31 @@ $profil = NULL;
 			}
 		}
 		
+		/*Supprimer un event*/
+		elseif($_GET['page'] == 'supprEvent') {
+			$obj1 = new EventManager();
+			$event = $obj1->getEvent();
+			
+			if(isset($_POST['chk'])){
+				$obj2 = new EventManager();
+				$data = $obj2->supprEvent($_POST['chk']) ;
+				if ($data == 0){
+						$res=0;
+						
+					} else{
+						$res=1;
+					}
+			$event = $obj1->getEvent();
+				include ('views/supprEvent.php');
+			}else{
+				include ('views/supprEvent.php');
+			}
+		}
+		
 		else {
 			include('views/error.php');
 		}
+		
 	}
 	else {
 		$obj1 = new PhotoManager();

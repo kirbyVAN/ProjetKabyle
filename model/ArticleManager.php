@@ -45,5 +45,10 @@ class ArticleManager extends Model{
 		$insertion = $this->executerRequete('insert into Articles(titre, auteur, contenu, dateArticle) values (?,?,?,?)',array($titreArticle, $auteurArticle, $addArticle, $dateArticle));
 			return 0;
 	}
+	
+	public function supprArticle($idArticle){
+			$modification = $this->executerRequete('DELETE FROM Articles WHERE idArticle=:idA',array(':idA'=>$idArticle));
+			return 0;
+		}
 }
 ?>

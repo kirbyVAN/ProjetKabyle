@@ -6,15 +6,31 @@
 		public function createUser($nom, $prenom, $age, $mail, $login, $pass) {
 			//retourne vrai si création ok - login si il existe déjà - sinon email si il existe déjà
 		
-			$test_login = $this->executerRequete('select * from Utilisateur where Login=?', $login);
-			$test_mail = $this->executerRequete('select * from Utilisateur where Email=?', $mail);
+			$test_login = $this->executerRequete('select * from TempUser where Login=?', $login);
+			$test_mail = $this->executerRequete('select * from TempUser where Email=?', $mail);
 			if($test_login->rowCount() != 0){
 				return 1;
 			}
 			if($test_mail->rowCount() != 0){
 				return 2;
 			}
-			$insertion = $this->executerRequete('insert into Utilisateur(Nom,Prenom,Age,Email,Login,Pass) values (?, ?, ?, ?, ?, ?)',array($nom, $prenom, $age, $mail, $login, $pass));
+			$insertion = $this->executerRequete('insert into TempUser(Nom,Prenom,Age,Email,Login,Pass) values (?, ?, ?, ?, ?, ?)',array($nom, $prenom, $age, $mail, $login, $pass));
+			return 0;
+		}
+		
+		public function addUser($login) {
+			//A FINIR
+			//retourne vrai si création ok - login si il existe déjà - sinon email si il existe déjà
+		
+			$test_login = $this->executerRequete('select * from TempUser where Login=?', $login);
+			$test_mail = $this->executerRequete('select * from TempUser where Email=?', $mail);
+			if($test_login->rowCount() != 0){
+				return 1;
+			}
+			if($test_mail->rowCount() != 0){
+				return 2;
+			}
+			$insertion = $this->executerRequete('insert into TempUser(Nom,Prenom,Age,Email,Login,Pass) values (?, ?, ?, ?, ?, ?)',array($nom, $prenom, $age, $mail, $login, $pass));
 			return 0;
 		}
 		
@@ -39,14 +55,31 @@
 			return $admin;
 		}
 		
+		public function getTempUser() {
+			$reponse = $this ->executerRequete('SELECT Login, Nom, Prenom, Age FROM TempUser');
+			$tempUser=$reponse->fetchAll();
+			return $tempUser;
+		}
+		
 		public function getNoAdmin() {
-		$reponse = $this ->executerRequete('SELECT Login, Nom, Prenom, Age FROM Utilisateur WHERE admin!=1');
-		$noAdmin=$reponse->fetchAll();
-		return $noAdmin;
-	}
+			$reponse = $this ->executerRequete('SELECT Login, Nom, Prenom, Age FROM Utilisateur WHERE admin=0');
+			$noAdmin=$reponse->fetchAll();
+			return $noAdmin;
+		}
+		
+		public function getAdmin() {
+			$reponse = $this ->executerRequete('SELECT Login, Nom, Prenom, Age FROM Utilisateur WHERE admin=1');
+			$admin=$reponse->fetchAll();
+			return $admin;
+		}
 	
 		public function addAdmin($login){
 			$modification = $this->executerRequete('UPDATE Utilisateur SET admin=1 WHERE Login=:Login',array(':Login'=>$login));
+			return 0;
+		}
+		
+		public function supprAdmin($login){
+			$modification = $this->executerRequete('UPDATE Utilisateur SET admin=0 WHERE Login=:Login',array(':Login'=>$login));
 			return 0;
 		}
 		

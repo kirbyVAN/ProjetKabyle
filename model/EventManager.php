@@ -3,7 +3,7 @@
 class EventManager extends Model{
 	
 	public function getEvent() {
-		$reponse = $this ->executerRequete('SELECT * FROM Evenements WHERE dateFin>= NOW() order by dateDebut');
+		$reponse = $this ->executerRequete('SELECT * FROM Evenements WHERE dateFin>=(NOW() - INTERVAL 1 DAY) order by dateDebut');
 		$event=$reponse->fetchAll();
 		return $event;
 	}
@@ -36,7 +36,7 @@ class EventManager extends Model{
 	} 
 	
 	public function eventProc(){
-		$reponse = $this ->executerRequete('SELECT * FROM Evenements WHERE dateFin>=NOW() ORDER BY dateDebut');
+		$reponse = $this ->executerRequete('SELECT * FROM Evenements WHERE dateFin>=(NOW() - INTERVAL 1 DAY) ORDER BY dateDebut');
 		$event=$reponse->fetch();
 		return $event;
 	}
@@ -45,5 +45,10 @@ class EventManager extends Model{
 		$insertion = $this->executerRequete('insert into Evenements(nomEvent, dateDebut, dateFin, descriptionEvent) values (?,?,?,?)',array($nomEvent, $dateDebut, $dateFin, $descEvent));
 			return 0;
 	}
+	
+	public function supprEvent($idEvent){
+			$modification = $this->executerRequete('DELETE FROM Evenements WHERE idEvent=:idE',array(':idE'=>$idEvent));
+			return 0;
+		}
 }
 ?>

@@ -14,11 +14,11 @@
 			</tr>
 			<tr>	
 				<td><label>Date de début:</label></td>
-				<td><input type="datetime-local"  id="dateDebut" name="dateDebut" placeholder="Date de début"/></td>
+				<td><input type="date"  id="dateDebut" name="dateDebut" placeholder="Date de début"/></td>
 			</tr>
 			<tr>	
 				<td><label>Date de fin :</label></td>
-				<td><input type="datetime-local"  id="dateFin" name="dateFin" placeholder="Datede fin"/></td>
+				<td><input type="date"  id="dateFin" name="dateFin" placeholder="Date de fin"/></td>
 			</tr>
 			<tr>
 				<td colspan="2"><label>Description de l\'évènement : </label></td>

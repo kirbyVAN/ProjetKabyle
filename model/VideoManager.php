@@ -28,5 +28,10 @@ class VideoManager extends Model{
 		$insertion = $this->executerRequete('insert into Videos(titre, url, dateVideo, descriptionVideo) values (?,?,?,?)',array($titre, $url, $dateVideo, $descriptionVideo));
 			return 0;
 	}
+	
+	public function supprVideo($idVideo){
+			$modification = $this->executerRequete('DELETE FROM Videos WHERE idVideo=:idV',array(':idV'=>$idVideo));
+			return 0;
+		}
 }	
 ?>

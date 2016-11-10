@@ -29,5 +29,10 @@ class PhotoManager extends Model{
 			return 0;
 	}
 	
+	public function supprPhoto($idPhoto){
+			$modification = $this->executerRequete('DELETE FROM Photos WHERE idPhoto=:idP',array(':idP'=>$idPhoto));
+			return 0;
+		}
+	
 }	
 ?>
