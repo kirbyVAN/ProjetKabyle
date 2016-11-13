@@ -1,6 +1,6 @@
 ﻿<?php
 session_start();
-//ini_set('display_errors','off');
+ini_set('display_errors','off');
 require_once('model/Model.php');
 require_once('model/UtilisateurManager.php');
 require_once('model/ArticleManager.php');
